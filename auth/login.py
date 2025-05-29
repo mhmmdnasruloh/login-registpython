@@ -4,7 +4,7 @@ def login_user(nama,password) :
     conn = get_connection()
     cursor = conn.cursor ()
     
-    query = "SELCET * FROM users WHERE nama = %s AND password = %s"
+    query = "SELECT * FROM users WHERE nama = %s AND password = %s"
     cursor.execute(query,(nama,password))
     user=cursor.fetchone()
     
