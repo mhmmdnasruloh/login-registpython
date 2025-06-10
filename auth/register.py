@@ -8,9 +8,9 @@ def register_user(nama,password) :
         query = "INSERT INTO users  (nama, password ) VALUES  (%s, %s)"
         cursor.execute (query,(nama,password))
         conn.commit()
-        print ("Registrasi berhasil")
+        return {"status ": "success", "message": "register erhasil"}
     except Exception as e:
-        print("Terjadi error saat registrasi:", e)
+        return {"status" : "error", "message": f"terjadi error: {e}"} 
 
     finally :
         cursor.close()

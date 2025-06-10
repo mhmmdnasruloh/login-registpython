@@ -9,9 +9,9 @@ def login_user(nama,password) :
     user=cursor.fetchone()
     
     if user :
-        print ("Loginn berhasil selamat datang ", user [1])
+        return {"status": "succes", "message ": f"login berhasil, selamat datang {user[1]}"}
     else : 
-        print ("Login gagal. Nama atau password mungkin salah ")
+       return {"status " : "fail", "message": "login gagal,nama atau password salah"}
         
     cursor.close ()
     conn.close ()
